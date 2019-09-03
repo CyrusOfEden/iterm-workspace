@@ -1,14 +1,18 @@
 # iterm-workspace
 
-## Configuration-based iTerm Scripting
+**Configuration-based iTerm scripting for running your projects**
 
-In a project, add a file called `.iterm_workspace`.
+With a `.iterm_workspace` file in your project like:
 
 ```json
 [
-  [["bin/rails s", "bin/rails c"], ""]
+  ["dc run web rails c", ["dc up web", "cd web"]]
 ]
 ```
+
+Running `iterm-workspace` in the root of your project directory creates tabs and panes.
+
+![A simple demo](./demo.gif)
 
 ## Installation
 
