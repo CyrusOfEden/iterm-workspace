@@ -1,0 +1,41 @@
+#!/usr/bin/env osascript -l JavaScript
+
+function bootstrap(session, command, split) {
+  if (command instanceof Array) {
+    let sessions = [session]
+    for (let i = 1; i < command.length; i++) {
+      sessions.push(session[`${split}WithSameProfile`]())
+    }
+    split =
+      split === "splitVertically" ? "splitHorizontally" : "splitVertically"
+    for (let i = 0; i < command.length; i++) {
+      bootstrap(sessions[i], command[i], split)
+    }
+  } else if (command.length) {
+    session.write({ text: command })
+  }
+}
+
+function main(config = []) {
+  const terminal = Application("iTerm")
+  terminal.includeStandardAdditions = true
+
+  const window = terminal.currentWindow()
+  let tabs = [window.currentTab()]
+
+  for (let i = 0; i < config.length; i++) {
+    if (i !== 0) {
+      tabs.push(window.createTabWithDefaultProfile())
+    }
+    const commands = config[i]
+    const tab = tabs[i]
+    bootstrap(tab.currentSession(), commands, "splitHorizontally")
+  }
+
+  tabs[0].select()
+}
+
+function run(argv) {
+  const config = $.NSString.stringWithContentsOfFile(argv[0]).js || "[]"
+  main(JSON.parse(config))
+}
