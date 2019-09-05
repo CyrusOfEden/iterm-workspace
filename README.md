@@ -10,7 +10,7 @@ What if there was an _easy_ way to run all of those instantly in tabs and panes?
 
 Enter **iterm-workspace**: ⚡️ Configuration-based iTerm scripting for instantly starting up your project workspace.
 
-Let's look at a sample configuration file for a JavaScript project.
+Let's look at how **iterm-workspace** can help you jump into developing by lowering the barrier to getting started.
 
 ## JavaScript Project Example
 
