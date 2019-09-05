@@ -2,10 +2,27 @@
 
 config="$PWD/.iterm-workspace"
 
-if [ -f $config ]
-then
+if [ -f $config ]; then
   bootstrap-iterm-workspace $config
 else
   echo "No config found at $config..."
-  init-iterm-workspace
+  echo 'Creating empty config...'
+  echo
+
+  tee ./.iterm-workspace <<-JSON
+{
+  "tabs": [
+    {
+      "commands": [
+        ["# top left pane", "# top right pane"],
+        "# bottom pane"
+      ]
+    }
+  ]
+}
+JSON
+
+  echo
+  echo 'Done! Edit the .iterm-workspace config file in this directory to your liking.'
+  echo 'To Get Started, see https://github.com/knrz/iterm-workspace'
 fi
