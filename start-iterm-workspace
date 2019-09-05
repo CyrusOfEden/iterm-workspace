@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-config="$PWD/${$1:-".iterm-workspace"}"
+config="$PWD/${1:-".iterm-workspace"}"
 echo $config
 
 if [ -f $config ]; then
@@ -10,7 +10,7 @@ else
   echo 'Creating empty config...'
   echo
 
-  tee ./.iterm-workspace <<-JSON
+  tee $config <<-JSON
 {
   "tabs": [
     {
