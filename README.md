@@ -8,7 +8,9 @@ You arrive work, turn on your computer, fire up VS Code, and are ready to get de
 
 What if there was an _easy_ way to run all of those instantly in tabs and panes?
 
-Enter, `iterm-workspace`. ⚡️ Configuration-based iTerm scripting for instantly starting up your project workspace.
+Enter **iterm-workspace**: ⚡️ Configuration-based iTerm scripting for instantly starting up your project workspace.
+
+Let's look at a sample configuration file for a JavaScript project.
 
 ## JavaScript Project Example
 
@@ -93,8 +95,6 @@ Absolutely.
 2. Run `start-iterm-workspace` in your project directory to initialize a configuration file
 3. Step by step, develop and test your desired workspace configuration.
 4. Run `start-iterm-workspace` to launch your workspace
-
-Let's look at a sample configuration file for a JavaScript project.
 
 ## Notes
 
