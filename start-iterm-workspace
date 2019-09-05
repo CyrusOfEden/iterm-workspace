@@ -7,5 +7,5 @@ then
   bootstrap-iterm-workspace $config
 else
   echo "No config found at $config..."
-  iterm-workspace-init
+  init-iterm-workspace
 fi
