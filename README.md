@@ -4,7 +4,7 @@ Frequently, you'll run into a situation where you have to run multiple programs 
 
 Imagine this:
 
-You get to work, turn on your computer, fire up VS Code, and are ready to get working. You open up your terminal program, `cd` into the project directory. Now which commands are you supposed to run? Maybe you have JavaScript compilation, maybe you have a development server, and a job runner, and you're running a Docker database container by hand.
+You arrive work, turn on your computer, fire up VS Code, and are ready to get developing. You open up your terminal program, `cd` into the project directory. Now which commands are you supposed to run? Maybe you have JavaScript compilation, maybe you have a development server, and a job runner, and you're running a Docker database container by hand.
 
 What if there was an _easy_ way to run all of those instantly in tabs and panes?
 
