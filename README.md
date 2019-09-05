@@ -12,10 +12,11 @@ You get to work, turn on your computer, fire up VS Code, and are ready to get wo
 
 ## Getting Started
 
-1. Install
-2. Run `iterm-workspace-init`
+0. [Set iTerm to preserve working directory when splitting panes](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory).
+1. `brew tap knrz/iterm-workspace && brew install iterm-workspace` (Alternatively, clone this repo and add it to your `PATH`)
+2. Run `start-iterm-workspace` in your project directory to initialize a configuration file
 3. Step by step, develop and test your desired workspace configuration.
-4. [Set iTerm to preserve working directory when splitting panes](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory)
+4. Run `start-iterm-workspace` to launch your workspace
 
 Let's look at a sample configuration file for a JavaScript project.
 
