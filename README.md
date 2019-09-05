@@ -6,17 +6,9 @@ Imagine this:
 
 You get to work, turn on your computer, fire up VS Code, and are ready to get working. You open up your terminal program, `cd` into the project directory. Now which commands are you supposed to run? Maybe you have JavaScript compilation, maybe you have a development server, and a job runner, and you're running a Docker database container by hand.
 
-**What if there was an _easy_ way to run all of those instantly in tabs and panes?**
+What if there was an _easy_ way to run all of those instantly in tabs and panes?
 
-## Getting Started
-
-0. [Set iTerm to preserve working directory when splitting panes](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory).
-1. `brew tap knrz/iterm-workspace && brew install iterm-workspace` (Alternatively, clone this repo and add it to your `PATH`)
-2. Run `start-iterm-workspace` in your project directory to initialize a configuration file
-3. Step by step, develop and test your desired workspace configuration.
-4. Run `start-iterm-workspace` to launch your workspace
-
-Let's look at a sample configuration file for a JavaScript project.
+Enter, `iterm-workspace`. ⚡️ Configuration-based iTerm scripting for instantly starting up your project workspace.
 
 ## JavaScript Project Example
 
@@ -93,6 +85,16 @@ _The Second Tab_
 ## Is it any good?
 
 Absolutely.
+
+## Getting Started / Installation
+
+0. [Set iTerm to preserve working directory when splitting panes](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory).
+1. `brew tap knrz/iterm-workspace && brew install iterm-workspace` (Alternatively, clone this repo and add it to your `PATH`)
+2. Run `start-iterm-workspace` in your project directory to initialize a configuration file
+3. Step by step, develop and test your desired workspace configuration.
+4. Run `start-iterm-workspace` to launch your workspace
+
+Let's look at a sample configuration file for a JavaScript project.
 
 ## Notes
 
