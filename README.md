@@ -1,7 +1,5 @@
 # iterm-workspace
 
-**Configuration-based iTerm scripting for starting up your project workspace.**
-
 Frequently, you'll run into a situation where you have to run multiple programs in your terminal to get your project running.
 
 Imagine this:
