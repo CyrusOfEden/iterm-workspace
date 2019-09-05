@@ -35,7 +35,7 @@ Let's look at a sample configuration file for a JavaScript project.
 }
 ```
 
-Running `iterm-workspace-start` with the configuration above results in the following setup, and it will run both `yarn start` and `yarn watch`.
+Running `start-iterm-workspace` with the configuration above results in the following setup, and it will run both `yarn start` and `yarn watch`.
 
 **Hint** Try to see the visual relationship between the commands array, as formatted, and the result below.
 
@@ -84,7 +84,7 @@ Let's augment our configuration file to also run these programs.
 }
 ```
 
-**Hint** Look for the visual relationship between the commands arrays, as formatted, and the result below.
+**Hint** Look for the visual relationship between the commands arrays, as formatted, and the result of running `start-iterm-workspace` below.
 
 _The First Tab_
 ![The First Tab](./images/rails-tab-1.png)
@@ -104,11 +104,9 @@ Absolutely.
 
 ### Running Multiple Commands in a Single Pane
 
-Currently, each command can only be 1 string. If you need to chain commands, I would recommend doing so with `&&` (e.g. `cd /path/to/project && yarn start`).
+Currently, each command can only be 1 string. If you need to chain commands, I would recommend doing so with `&&` or `;`, as appropriate. (e.g. `cd /path/to/project && yarn start`).
 
-## License
-
-Copyright and License
+## Copyright and License
 
 Copyright (c) 2019, Kash Nouroozi.
 
