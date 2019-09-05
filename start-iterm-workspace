@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 config="$PWD/${1:-".iterm-workspace"}"
-echo $config
 
 if [ -f $config ]; then
   bootstrap-iterm-workspace $config
