@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+config="$PWD/.iterm-workspace"
+
+if [ -f $config ]
+then
+  bootstrap-iterm-workspace $config
+else
+  echo "No config found at $config..."
+  iterm-workspace-init
+fi

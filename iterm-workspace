@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-
-if [ -f "$PWD/.iterm_workspace" ]
-then
-  ./iterm-bootstrap "$PWD/.iterm_workspace"
-else
-  echo "No config found at $PWD/.iterm_workspace"
-fi

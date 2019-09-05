@@ -16,26 +16,30 @@ function bootstrap(session, command, split) {
   }
 }
 
-function main(config = []) {
+function main(config) {
   const terminal = Application("iTerm")
   terminal.includeStandardAdditions = true
 
   const window = terminal.currentWindow()
   let tabs = [window.currentTab()]
 
-  for (let i = 0; i < config.length; i++) {
+  for (let i = 0; i < config.tabs.length; i++) {
     if (i !== 0) {
       tabs.push(window.createTabWithDefaultProfile())
     }
-    const commands = config[i]
-    const tab = tabs[i]
-    bootstrap(tab.currentSession(), commands, "splitHorizontally")
+    let { commands, firstSplit } = config.tabs[i]
+    if (!firstSplit) {
+      firstSplit = "splitHorizontally"
+    }
+    bootstrap(tabs[i].currentSession(), commands, firstSplit)
   }
 
   tabs[0].select()
 }
 
 function run(argv) {
-  const config = $.NSString.stringWithContentsOfFile(argv[0]).js || "[]"
-  main(JSON.parse(config))
+  const fileContents = $.NSString.stringWithContentsOfFile(argv[0]).js || "[]"
+  const config = JSON.parse(fileContents)
+
+  main(config)
 }
