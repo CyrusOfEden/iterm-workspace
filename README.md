@@ -27,9 +27,7 @@ Enter **iterm-workspace**: ⚡️ Configuration-based iTerm scripting for instan
 
 Running `start-iterm-workspace` with the configuration above results in the following setup.
 
-**Hint** Try to see the visual relationship between the commands array, as formatted, and the result below.
-
-Notice that `["yarn start", "yarn watch"]` corresponds to the two panes at the top, and the empty command `""` corresponds to the bottom pane.
+**Hint** Try to see the visual relationship between the commands array, as formatted, and the result below. Notice that `["yarn start", "yarn watch"]` corresponds to the two panes at the top, and the empty command `""` corresponds to the bottom pane.
 
 ![JavaScript Example](./images/js.png)
 
