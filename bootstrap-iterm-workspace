@@ -3,23 +3,26 @@
 function bootstrap(session, command, split) {
   if (command instanceof Array) {
     let sessions = [session]
-    for (let i = 1; i < command.length; i++) {
+    for (let i = 1; i < command.length; ++i) {
       sessions.push(session[`${split}WithSameProfile`]())
     }
-    split =
+    const nextSplit =
       split === "splitVertically" ? "splitHorizontally" : "splitVertically"
-    for (let i = 0; i < command.length; i++) {
-      bootstrap(sessions[i], command[i], split)
+    for (let i = 0; i < command.length; ++i) {
+      bootstrap(sessions[i], command[i], nextSplit)
     }
-  } else if (command.length) {
+  } else if (command) {
     session.write({ text: command })
   }
 }
 
-function tabConfiguration({ tabs, ...config }) {
+function tabConfiguration({ tabs }) {
+  const wrapWith = cd => cmd =>
+    cmd instanceof Array ? cmd.map(wrapWith(cd)) : cmd ? `${cd} && ${cmd}` : cd
+
   return tabs.map(({ cd, commands, firstSplit }) => ({
     firstSplit: firstSplit || "splitHorizontally",
-    commands: cd ? commands.map(cmd => `${cd} && ${cmd}`) : commands,
+    commands: cd ? commands.map(wrapWith(cd)) : commands,
   }))
 }
 
@@ -32,11 +35,11 @@ function main(config) {
 
   const tabConfig = tabConfiguration(config)
 
-  for (let i = 0; i < tabConfig.length; i++) {
+  for (let i = 0; i < tabConfig.length; ++i) {
     if (i !== 0) {
       tabs.push(window.createTabWithDefaultProfile())
     }
-    const { commands, firstSplit } = config.tabs[i]
+    const { commands, firstSplit } = tabConfig[i]
     bootstrap(tabs[i].currentSession(), commands, firstSplit)
   }
 
