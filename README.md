@@ -86,24 +86,22 @@ If you specify a command for `cd`, then that command will be prepended to each i
 
 ```json
 {
-  {
-    "tabs": [
-      {
-        "cd": "cd /path/to/frontend",
-        "commands": [
-          "yarn start",
-          ""
-        ]
-      },
-      {
-        "cd": "cd /path/to/backend",
-        "commands": [
-          "iex -S mix run",
-          ""
-        ]
-      }
-    ]
-  }
+  "tabs": [
+    {
+      "cd": "cd /path/to/frontend",
+      "commands": [
+        "yarn start",
+        ""
+      ]
+    },
+    {
+      "cd": "cd /path/to/backend",
+      "commands": [
+        "iex -S mix run",
+        ""
+      ]
+    }
+  ]
 }
 ```
 
