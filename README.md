@@ -72,6 +72,33 @@ Let's augment our configuration file to also run these programs.
 }
 ```
 
+## Working Across Projects
+
+If you specify a command for `cd`, then that command will be prepended to each item in `commands`.
+
+```json
+{
+  {
+    "tabs": [
+      {
+        "cd": "cd /path/to/frontend",
+        "commands": [
+          "yarn start",
+          ""
+        ]
+      },
+      {
+        "cd": "cd /path/to/backend",
+        "commands": [
+          "iex -S mix run",
+          ""
+        ]
+      }
+    ]
+  }
+}
+```
+
 **Hint** Look for the visual relationship between the commands arrays, as formatted, and the result of running `start-iterm-workspace` below.
 
 _The First Tab_
