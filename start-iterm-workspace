@@ -13,9 +13,10 @@ else
 {
   "tabs": [
     {
+      "cd": "cd /path/to/directory",
       "commands": [
-        ["# top left pane", "# top right pane"],
-        "# bottom pane"
+        ["# run in top left pane", "# run in top right pane"],
+        "# run in bottom pane"
       ]
     }
   ]

@@ -80,6 +80,33 @@ _The First Tab_
 _The Second Tab_
 ![The Second Tab](./images/rails-tab-2.png)
 
+## Working Across Projects
+
+If you specify a command for `cd`, then that command will be prepended to each item in `commands`.
+
+```json
+{
+  {
+    "tabs": [
+      {
+        "cd": "cd /path/to/frontend",
+        "commands": [
+          "yarn start",
+          ""
+        ]
+      },
+      {
+        "cd": "cd /path/to/backend",
+        "commands": [
+          "iex -S mix run",
+          ""
+        ]
+      }
+    ]
+  }
+}
+```
+
 ## Is it any good?
 
 Absolutely.

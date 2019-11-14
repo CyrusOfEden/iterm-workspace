@@ -16,6 +16,13 @@ function bootstrap(session, command, split) {
   }
 }
 
+function tabConfiguration({ tabs, ...config }) {
+  return tabs.map(({ cd, commands, firstSplit }) => ({
+    firstSplit: firstSplit || "splitHorizontally",
+    commands: cd ? commands.map(cmd => `${cd} && ${cmd}`) : commands,
+  }))
+}
+
 function main(config) {
   const terminal = Application("iTerm")
   terminal.includeStandardAdditions = true
@@ -23,14 +30,13 @@ function main(config) {
   const window = terminal.currentWindow()
   let tabs = [window.currentTab()]
 
-  for (let i = 0; i < config.tabs.length; i++) {
+  const tabConfig = tabConfiguration(config)
+
+  for (let i = 0; i < tabConfig.length; i++) {
     if (i !== 0) {
       tabs.push(window.createTabWithDefaultProfile())
     }
-    let { commands, firstSplit } = config.tabs[i]
-    if (!firstSplit) {
-      firstSplit = "splitHorizontally"
-    }
+    const { commands, firstSplit } = config.tabs[i]
     bootstrap(tabs[i].currentSession(), commands, firstSplit)
   }
 
