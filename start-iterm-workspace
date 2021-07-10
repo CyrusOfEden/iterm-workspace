@@ -3,7 +3,7 @@
 config="$PWD/${1:-".iterm-workspace"}"
 
 if [ -f $config ]; then
-  bootstrap-iterm-workspace $config
+  ./bootstrap-iterm-workspace $config
 else
   echo "No config found at $config..."
   echo 'Creating empty config...'
