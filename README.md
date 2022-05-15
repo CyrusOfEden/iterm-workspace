@@ -16,10 +16,7 @@ Enter **iterm-workspace**: ⚡️ Configuration-based iTerm scripting for instan
 {
   "tabs": [
     {
-      "commands": [
-        ["yarn start", "yarn watch"],
-        ""
-      ]
+      "commands": [["yarn start", "yarn watch"], ""]
     }
   ]
 }
@@ -39,10 +36,7 @@ Let's say you're working on a Rails project. The configuration below is exactly 
 {
   "tabs": [
     {
-      "commands": [
-        ["bin/rails s", "bin/rails c"],
-        ""
-      ]
+      "commands": [["bin/rails s", "bin/rails c"], ""]
     }
   ]
 }
@@ -56,16 +50,13 @@ Let's augment our configuration file to also run these programs.
 {
   "tabs": [
     {
-      "commands": [
-        ["bin/rails s", "bin/rails c"],
-        ""
-      ]
+      "commands": [["bin/rails s", "bin/rails c"], ""]
     },
     {
       "commands": [
         "bin/sidekiq -C config/sidekiq.yml",
         "bin/webpack-dev-server",
-        "docker run -d --name db -v db:/var/lib/postgresql/data -p 5432:5432 postgres:11",
+        "docker run -d --name db -v db:/var/lib/postgresql/data -p 5432:5432 postgres:11"
       ]
     }
   ]
@@ -89,17 +80,11 @@ If you specify a command for `cd`, then that command will be prepended to each i
   "tabs": [
     {
       "cd": "cd /path/to/frontend",
-      "commands": [
-        "yarn start",
-        ""
-      ]
+      "commands": ["yarn start", ""]
     },
     {
       "cd": "cd /path/to/backend",
-      "commands": [
-        "iex -S mix run",
-        ""
-      ]
+      "commands": ["iex -S mix run", ""]
     }
   ]
 }
