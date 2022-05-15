@@ -3,9 +3,7 @@
 config="$PWD/${1:-".iterm-workspace"}"
 
 if [ -f $config ]; then
-  dir=$(dirname $BASH_SOURCE)
-  parent=$(dirname $dir)
-  $parent/bootstrap-iterm-workspace $config
+  bootstrap-iterm-workspace $config
 else
   echo "Initializing new config at $config..."
   echo
