@@ -25,7 +25,7 @@ Enter **iterm-workspace**: ⚡️ Configuration-based iTerm scripting for instan
 }
 ```
 
-Running `start-iterm-workspace` with the configuration above results in the following setup.
+Running `iterm-workspace` with the configuration above results in the following setup.
 
 **Hint** Try to see the visual relationship between the commands array, as formatted, and the result below. Notice that `["yarn start", "yarn watch"]` corresponds to the two panes at the top, and the empty command `""` corresponds to the bottom pane.
 
@@ -72,7 +72,7 @@ Let's augment our configuration file to also run these programs.
 }
 ```
 
-**Hint** Look for the visual relationship between the commands arrays, as formatted, and the result of running `start-iterm-workspace` below.
+**Hint** Look for the visual relationship between the commands arrays, as formatted, and the result of running `iterm-workspace` below.
 
 _The First Tab_
 ![The First Tab](./images/rails-tab-1.png)
@@ -113,9 +113,9 @@ Absolutely.
 
 0. [Set iTerm to preserve working directory when splitting panes](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory).
 1. `brew tap knrz/iterm-workspace && brew install iterm-workspace` (Alternatively, clone this repo and add it to your `PATH`)
-2. Run `start-iterm-workspace` in your project directory to initialize a configuration file
+2. Run `iterm-workspace` in your project directory to initialize a configuration file
 3. Step by step, develop and test your desired workspace configuration.
-4. Run `start-iterm-workspace` to launch your workspace
+4. Run `iterm-workspace` to launch your workspace
 
 ## Notes
 
