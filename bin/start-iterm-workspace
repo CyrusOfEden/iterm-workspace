@@ -7,19 +7,21 @@ if [ -f $config ]; then
   parent=$(dirname $dir)
   $parent/bootstrap-iterm-workspace $config
 else
-  echo "No config found at $config..."
-  echo 'Creating empty config...'
+  echo "Initializing new config at $config..."
   echo
 
   tee $config <<-JSON
 {
   "tabs": [
     {
-      "cd": "/path/to/directory",
+      "cd": ".",
       "commands": [
-        ["# command split vertically", "# command split vertically"],
-        "# comand split horizontally",
-        "# comand split horizontally"
+        [
+          "echo -n 'command split vertically'",
+          "echo -n 'command split vertically'"
+        ],
+        "echo -n 'command split horizontally'",
+        "echo -n 'command split horizontally'"
       ]
     }
   ]
@@ -27,5 +29,5 @@ else
 JSON
 
   echo
-  echo 'Done! Edit the .iterm-workspace config file in this directory to your liking.'
+  echo 'Done! Edit .iterm-workspace config and run start-item-workspace again.'
 fi
