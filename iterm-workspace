@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+config="$PWD/${1:-".iterm-workspace"}"
+
+if [ -f $config ]; then
+  bootstrap-iterm-workspace $config
+else
+  echo "Initializing new config at $config..."
+  echo
+
+  tee $config <<-JSON
+{
+  "tabs": [
+    {
+      "cd": ".",
+      "commands": [
+        [
+          "echo -n 'command split vertically'",
+          "echo -n 'command split vertically'"
+        ],
+        "echo -n 'command split horizontally'",
+        "echo -n 'command split horizontally'"
+      ]
+    }
+  ]
+}
+JSON
+
+  echo
+  echo 'Done! Edit .iterm-workspace config and run start-item-workspace again.'
+fi

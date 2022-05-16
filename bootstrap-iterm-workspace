@@ -1,13 +1,15 @@
 #!/usr/bin/env osascript -l JavaScript
 
+const SPLIT_VERTICAL = "splitVertically"
+const SPLIT_HORIZONTAL = "splitHorizontally"
+
 function bootstrap(session, command, split) {
   if (command instanceof Array) {
     let sessions = [session]
     for (let i = 1; i < command.length; ++i) {
       sessions.push(session[`${split}WithSameProfile`]())
     }
-    const nextSplit =
-      split === "splitVertically" ? "splitHorizontally" : "splitVertically"
+    const nextSplit = split === SPLIT_VERTICAL ? SPLIT_HORIZONTAL : SPLIT_VERTICAL
     for (let i = 0; i < command.length; ++i) {
       bootstrap(sessions[i], command[i], nextSplit)
     }
@@ -18,10 +20,10 @@ function bootstrap(session, command, split) {
 
 function tabConfiguration({ tabs }) {
   const wrapWith = cd => cmd =>
-    cmd instanceof Array ? cmd.map(wrapWith(cd)) : cmd ? `${cd} && ${cmd}` : cd
+    cmd instanceof Array ? cmd.map(wrapWith(cd)) : cmd ? `cd ${cd} && ${cmd}` : cd
 
   return tabs.map(({ cd, commands, firstSplit }) => ({
-    firstSplit: firstSplit || "splitHorizontally",
+    firstSplit: firstSplit || SPLIT_HORIZONTAL,
     commands: cd ? commands.map(wrapWith(cd)) : commands,
   }))
 }

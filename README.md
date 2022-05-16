@@ -16,16 +16,13 @@ Enter **iterm-workspace**: ⚡️ Configuration-based iTerm scripting for instan
 {
   "tabs": [
     {
-      "commands": [
-        ["yarn start", "yarn watch"],
-        ""
-      ]
+      "commands": [["yarn start", "yarn watch"], ""]
     }
   ]
 }
 ```
 
-Running `start-iterm-workspace` with the configuration above results in the following setup.
+Running `iterm-workspace` with the configuration above results in the following setup.
 
 **Hint** Try to see the visual relationship between the commands array, as formatted, and the result below. Notice that `["yarn start", "yarn watch"]` corresponds to the two panes at the top, and the empty command `""` corresponds to the bottom pane.
 
@@ -39,10 +36,7 @@ Let's say you're working on a Rails project. The configuration below is exactly 
 {
   "tabs": [
     {
-      "commands": [
-        ["bin/rails s", "bin/rails c"],
-        ""
-      ]
+      "commands": [["bin/rails s", "bin/rails c"], ""]
     }
   ]
 }
@@ -56,23 +50,20 @@ Let's augment our configuration file to also run these programs.
 {
   "tabs": [
     {
-      "commands": [
-        ["bin/rails s", "bin/rails c"],
-        ""
-      ]
+      "commands": [["bin/rails s", "bin/rails c"], ""]
     },
     {
       "commands": [
         "bin/sidekiq -C config/sidekiq.yml",
         "bin/webpack-dev-server",
-        "docker run -d --name db -v db:/var/lib/postgresql/data -p 5432:5432 postgres:11",
+        "docker run -d --name db -v db:/var/lib/postgresql/data -p 5432:5432 postgres:11"
       ]
     }
   ]
 }
 ```
 
-**Hint** Look for the visual relationship between the commands arrays, as formatted, and the result of running `start-iterm-workspace` below.
+**Hint** Look for the visual relationship between the commands arrays, as formatted, and the result of running `iterm-workspace` below.
 
 _The First Tab_
 ![The First Tab](./images/rails-tab-1.png)
@@ -89,17 +80,11 @@ If you specify a command for `cd`, then that command will be prepended to each i
   "tabs": [
     {
       "cd": "cd /path/to/frontend",
-      "commands": [
-        "yarn start",
-        ""
-      ]
+      "commands": ["yarn start", ""]
     },
     {
       "cd": "cd /path/to/backend",
-      "commands": [
-        "iex -S mix run",
-        ""
-      ]
+      "commands": ["iex -S mix run", ""]
     }
   ]
 }
@@ -112,10 +97,10 @@ Absolutely.
 ## Getting Started / Installation
 
 0. [Set iTerm to preserve working directory when splitting panes](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory).
-1. `brew tap knrz/iterm-workspace && brew install iterm-workspace` (Alternatively, clone this repo and add it to your `PATH`)
-2. Run `start-iterm-workspace` in your project directory to initialize a configuration file
+1. `brew tap truestamp/tap && brew install iterm-workspace` (Alternatively, clone this repo and add it to your `PATH`)
+2. Run `iterm-workspace` in your project directory to initialize a configuration file
 3. Step by step, develop and test your desired workspace configuration.
-4. Run `start-iterm-workspace` to launch your workspace
+4. Run `iterm-workspace` to launch your workspace
 
 ## Notes
 
